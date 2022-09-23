@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.button)
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        viewModel.rollDice()
+        rollButton.setOnClickListener { viewModel.rollDice() }
 
 
         /*rollButton.setOnClickListener { rollDice() }*/
     }
 
     /*private fun rollDice() {
-        val dice = Dice(6)
+
         val diceRoll = dice.roll()
 
         val resultTextView: TextView = findViewById(R.id.textView)
